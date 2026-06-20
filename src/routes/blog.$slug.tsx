@@ -1,37 +1,40 @@
-import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowLeft } from "lucide-react";
 import { getPost, posts } from "@/data/posts";
 
 export const Route = createFileRoute("/blog/$slug")({
-  loader: ({ params }) => {
-    const post = getPost(params.slug);
-    if (!post) throw notFound();
-    return { post };
-  },
-  head: ({ loaderData }) => ({
-    meta: loaderData
-      ? [
-          { title: `${loaderData.post.title} — Dominique Carilo` },
-          { name: "description", content: loaderData.post.excerpt },
-          { property: "og:title", content: loaderData.post.title },
-          { property: "og:description", content: loaderData.post.excerpt },
-          { property: "og:type", content: "article" },
-        ]
-      : [],
-  }),
-  notFoundComponent: () => (
-    <div className="mx-auto max-w-2xl px-6 py-24 text-center">
-      <h1 className="font-display text-3xl font-bold text-brand">Post não encontrado</h1>
-      <Link to="/" className="mt-6 inline-block text-brand underline">
-        Voltar ao início
-      </Link>
-    </div>
-  ),
   component: PostPage,
+  head: ({ params }) => {
+    const post = params ? getPost(params.slug) : undefined;
+    return {
+      meta: post
+        ? [
+            { title: `${post.title} — Dominique Carilo` },
+            { name: "description", content: post.excerpt },
+            { property: "og:title", content: post.title },
+            { property: "og:description", content: post.excerpt },
+            { property: "og:type", content: "article" },
+          ]
+        : [{ title: "Post — Dominique Carilo" }],
+    };
+  },
 });
 
 function PostPage() {
-  const { post } = Route.useLoaderData();
+  const { slug } = Route.useParams();
+  const post = getPost(slug);
+
+  if (!post) {
+    return (
+      <div className="mx-auto max-w-2xl px-6 py-24 text-center">
+        <h1 className="font-display text-3xl font-bold text-brand">Post não encontrado</h1>
+        <Link to="/" className="mt-6 inline-block text-brand underline">
+          Voltar ao início
+        </Link>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-white text-brand">
       <header className="bg-brand py-4 text-brand-foreground">
