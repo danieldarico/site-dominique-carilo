@@ -50,7 +50,7 @@ function PostPage() {
           {post.title}
         </h1>
         <div className="mt-8 space-y-5 text-base leading-relaxed md:text-[17px]">
-          {post.paragraphs.map((p, i) => (
+          {post.paragraphs.map((p: string, i: number) => (
             <p key={i}>{p}</p>
           ))}
         </div>
