@@ -77,6 +77,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { title: "Dominique Carilo" },
+      { property: "og:title", content: "Dominique Carilo" },
+      { name: "twitter:title", content: "Dominique Carilo" },
+      { name: "description", content: "Psicóloga pela Universidade Veiga de Almeida com extensão em saúde mental do trabalhador pela UFRJ. Pós graduada em Psicanálise, Tratamento dos transtornos de a" },
+      { property: "og:description", content: "Psicóloga pela Universidade Veiga de Almeida com extensão em saúde mental do trabalhador pela UFRJ. Pós graduada em Psicanálise, Tratamento dos transtornos de a" },
+      { name: "twitter:description", content: "Psicóloga pela Universidade Veiga de Almeida com extensão em saúde mental do trabalhador pela UFRJ. Pós graduada em Psicanálise, Tratamento dos transtornos de a" },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/69450989-f8d8-4ea1-a44b-32dcc74c2ef1/id-preview-e2f641bf--a0fd8b67-a4ce-41bd-a762-8a291d953ab7.lovable.app-1781967730192.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/69450989-f8d8-4ea1-a44b-32dcc74c2ef1/id-preview-e2f641bf--a0fd8b67-a4ce-41bd-a762-8a291d953ab7.lovable.app-1781967730192.png" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:type", content: "website" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
