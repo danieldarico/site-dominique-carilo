@@ -20,13 +20,13 @@ const perguntas = [
 
 export function DuvidasRapidas() {
   return (
-    <Section id="duvidas-rapidas" background="white" divider>
+    <Section id="duvidas-rapidas" background="alt">
       <Eyebrow>Dúvidas</Eyebrow>
       <SectionTitle>Tire suas dúvidas</SectionTitle>
       <div className="mx-auto grid max-w-4xl grid-cols-1 gap-4 md:grid-cols-3">
         {perguntas.map((p, i) => (
           <Reveal key={p.q} delay={i * 90}>
-            <div className="h-full rounded-2xl bg-surface-alt p-5">
+            <div className="h-full rounded-2xl bg-white p-5">
               <p className="mb-2 font-sans text-sm font-semibold text-ink">{p.q}</p>
               <p className="font-sans text-sm leading-relaxed text-ink/65">{p.a}</p>
             </div>

@@ -64,13 +64,13 @@ function Atendimento() {
           subtitle="Antes de qualquer interpretação, existe um tempo dedicado à escuta. É nesse primeiro momento que conhecemos sua história, compreendemos sua demanda e avaliamos juntos se este é o caminho mais adequado."
         />
 
-        <Section id="travessia" background="white" divider>
+        <Section id="travessia" background="white">
           <Eyebrow>A travessia da análise</Eyebrow>
           <SectionTitle>O percurso do tratamento</SectionTitle>
           <Timeline items={etapas} />
         </Section>
 
-        <Section id="sobre-o-processo" background="alt" divider>
+        <Section id="sobre-o-processo" background="alt">
           <div className="mx-auto grid max-w-4xl grid-cols-1 items-center gap-12 md:grid-cols-[0.8fr_1.2fr]">
             <FloatingQuote
               quote="Assim como o barqueiro conduz a travessia sem decidir o destino do viajante, o analista acompanha o percurso."

@@ -31,10 +31,22 @@ export const Route = createFileRoute("/blog/")({
   component: BlogIndex,
 });
 
-function PostCard({ post, delay = 0, tag }: { post: Post; delay?: number; tag?: string }) {
+function PostCard({
+  post,
+  delay = 0,
+  tag,
+  surface = "alt",
+}: {
+  post: Post;
+  delay?: number;
+  tag?: string;
+  surface?: "alt" | "white";
+}) {
   return (
     <Reveal delay={delay} className="h-full">
-      <article className="flex h-full flex-col overflow-hidden rounded-2xl bg-surface-alt transition-shadow hover:shadow-md">
+      <article
+        className={`flex h-full flex-col overflow-hidden rounded-2xl transition-shadow hover:shadow-md ${surface === "white" ? "bg-white" : "bg-surface-alt"}`}
+      >
         <div className="aspect-video w-full bg-divider/40" />
         <div className="flex flex-1 flex-col gap-3 p-6">
           {tag && (
@@ -75,7 +87,7 @@ function BlogIndex() {
         />
 
         {favoritos.length > 0 && (
-          <Section id="favoritos" background="alt" divider>
+          <Section id="favoritos" background="white">
             <div className="mb-2 flex items-center justify-center gap-2">
               <Star className="size-4 text-bordo" strokeWidth={1.75} />
               <Eyebrow>Favoritos da autora</Eyebrow>
@@ -83,20 +95,20 @@ function BlogIndex() {
             <SectionTitle>Selecionados pela Dominique</SectionTitle>
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
               {favoritos.map((post, i) => (
-                <PostCard key={post.slug} post={post} delay={i * 80} tag="Favorito" />
+                <PostCard key={post.slug} post={post} delay={i * 80} tag="Favorito" surface="alt" />
               ))}
             </div>
           </Section>
         )}
 
-        <Section id="artigos" background="white">
+        <Section id="artigos" background="alt">
           <Eyebrow tone="petroleo">Blog</Eyebrow>
           <SectionTitle>Mais recentes</SectionTitle>
           <Carousel opts={{ align: "start" }} className="mx-auto w-full max-w-5xl">
             <CarouselContent>
               {recentes.map((post, i) => (
                 <CarouselItem key={post.slug} className="basis-full sm:basis-1/2 lg:basis-1/3">
-                  <PostCard post={post} delay={(i % 3) * 80} />
+                  <PostCard post={post} delay={(i % 3) * 80} surface="white" />
                 </CarouselItem>
               ))}
             </CarouselContent>

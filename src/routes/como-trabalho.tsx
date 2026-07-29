@@ -44,7 +44,7 @@ function ComoTrabalho() {
           subtitle="Acredito que cada pessoa chega à análise trazendo uma história singular. O sofrimento pode assumir muitas formas, mas nunca se reduz a um diagnóstico ou a uma categoria."
         />
 
-        <Section id="escuta-etica" background="white" divider>
+        <Section id="escuta-etica" background="white">
           <div className="mx-auto grid max-w-4xl grid-cols-1 items-center gap-12 md:grid-cols-[1.2fr_0.8fr]">
             <Reveal>
               <Eyebrow>Ética da escuta</Eyebrow>
@@ -60,7 +60,7 @@ function ComoTrabalho() {
           </div>
         </Section>
 
-        <Section id="como-funciona-atendimento" background="alt" divider>
+        <Section id="como-funciona-atendimento" background="alt">
           <Eyebrow>Como funciona o atendimento</Eyebrow>
           <SectionTitle>Formato do acompanhamento</SectionTitle>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">

@@ -1,4 +1,4 @@
-import { Camera } from "lucide-react";
+import { Camera, Quote } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { Section, Eyebrow } from "./Section";
 import { brandButtonClass } from "./BrandButton";
@@ -12,7 +12,7 @@ const formacao = [
 
 export function SobreCredenciais() {
   return (
-    <Section id="sobre-mim" background="white" divider>
+    <Section id="sobre-mim" background="alt">
       <div className="mx-auto grid max-w-4xl grid-cols-1 items-center gap-10 md:grid-cols-[0.8fr_1.2fr]">
         <Reveal className="justify-self-center md:justify-self-start">
           <div className="relative">
@@ -20,7 +20,7 @@ export function SobreCredenciais() {
               aria-hidden
               className="absolute -inset-3 -z-10 rounded-2xl border border-divider"
             />
-            <div className="flex aspect-square w-full max-w-xs items-center justify-center rounded-2xl bg-surface-alt">
+            <div className="flex aspect-square w-full max-w-xs items-center justify-center rounded-2xl bg-white">
               <Camera className="size-8 text-divider" strokeWidth={1.25} />
             </div>
           </div>
@@ -50,6 +50,26 @@ export function SobreCredenciais() {
           </Link>
         </Reveal>
       </div>
+
+      <Reveal delay={200} className="mx-auto mt-14 max-w-3xl">
+        <div className="flex flex-col items-start gap-4 rounded-2xl border border-dashed border-divider bg-white p-6 sm:flex-row sm:items-center md:p-8">
+          <span className="grid size-11 shrink-0 place-items-center rounded-full bg-petroleo/10 text-petroleo">
+            <Quote className="size-5" />
+          </span>
+          <div className="flex-1">
+            <p className="mb-1 font-sans text-xs font-semibold uppercase tracking-[0.16em] text-petroleo">
+              Meu método
+            </p>
+            <p className="font-display text-lg font-medium leading-snug text-ink md:text-xl">
+              Não investigamos apenas o que aconteceu. Investigamos como sua história continua
+              produzindo respostas no presente.
+            </p>
+          </div>
+          <Link to="/como-trabalho" className={brandButtonClass("outline", "shrink-0")}>
+            Entenda como trabalho
+          </Link>
+        </div>
+      </Reveal>
     </Section>
   );
 }

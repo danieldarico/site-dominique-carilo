@@ -9,7 +9,7 @@ export function Blog() {
   const visible = posts.slice(0, 3);
 
   return (
-    <Section id="meu-blog" background="white" divider>
+    <Section id="meu-blog" background="white">
       <Eyebrow tone="petroleo">Blog</Eyebrow>
       <SectionTitle>Últimos artigos.</SectionTitle>
       <div className="grid grid-cols-1 gap-6 md:grid-cols-3">

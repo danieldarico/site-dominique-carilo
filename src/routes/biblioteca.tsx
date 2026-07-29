@@ -46,7 +46,7 @@ function Biblioteca() {
           tone="petroleo"
         />
 
-        <Section id="sobre-a-biblioteca" background="white" divider>
+        <Section id="sobre-a-biblioteca" background="white">
           <div className="mx-auto max-w-2xl space-y-5 text-center font-sans text-base leading-relaxed text-ink/75">
             <p>
               Esta biblioteca reúne livros que marcaram meu percurso como psicóloga, psicanalista e
@@ -84,7 +84,7 @@ function Biblioteca() {
           </div>
         </Section>
 
-        <Section id="acervo" background="white" divider>
+        <Section id="acervo" background="white">
           <div className="mb-8 flex flex-col items-center gap-2 text-center">
             <Eyebrow>Acervo</Eyebrow>
             <p className="font-sans text-xs uppercase tracking-[0.14em] text-ink/40">

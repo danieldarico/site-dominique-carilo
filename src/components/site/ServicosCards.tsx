@@ -28,7 +28,7 @@ const servicos = [
 
 export function ServicosCards() {
   return (
-    <Section id="especialidades" background="alt" divider>
+    <Section id="especialidades" background="alt">
       <Eyebrow>Especialidades</Eyebrow>
       <SectionTitle>Onde a escuta se aplica</SectionTitle>
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">

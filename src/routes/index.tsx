@@ -5,7 +5,6 @@ import { Hero } from "@/components/site/Hero";
 import { ServicosCards } from "@/components/site/ServicosCards";
 import { ComoFuncionaBullets } from "@/components/site/ComoFuncionaBullets";
 import { SobreCredenciais } from "@/components/site/SobreCredenciais";
-import { MalEstar } from "@/components/site/MalEstar";
 import { Blog } from "@/components/site/Blog";
 import { DuvidasRapidas } from "@/components/site/DuvidasRapidas";
 import { BibliotecaTeaser } from "@/components/site/BibliotecaTeaser";
@@ -44,7 +43,6 @@ function Index() {
         <ServicosCards />
         <ComoFuncionaBullets />
         <SobreCredenciais />
-        <MalEstar />
         <Blog />
         <DuvidasRapidas />
         <BibliotecaTeaser />

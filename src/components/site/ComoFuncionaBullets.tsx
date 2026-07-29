@@ -11,7 +11,7 @@ const items = [
 
 export function ComoFuncionaBullets() {
   return (
-    <Section id="como-funciona" background="white" divider>
+    <Section id="como-funciona" background="white">
       <Eyebrow>Como funciona</Eyebrow>
       <SectionTitle>O formato do atendimento</SectionTitle>
       <Timeline items={items} tone="bordo" />

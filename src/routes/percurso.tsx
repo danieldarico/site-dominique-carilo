@@ -64,7 +64,7 @@ function Percurso() {
       <Navbar />
       <main>
         <PageHero eyebrow="Percurso" title="Formação e trajetória" tone="petroleo" />
-        <Section id="formacao" background="white" divider>
+        <Section id="formacao" background="white">
           <div className="mb-8 flex flex-wrap justify-center gap-2">
             <Badge className="border-0 bg-petroleo/10 text-petroleo hover:bg-petroleo/10">
               UVA

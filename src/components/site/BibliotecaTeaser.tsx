@@ -5,7 +5,7 @@ import { brandButtonClass } from "./BrandButton";
 
 export function BibliotecaTeaser() {
   return (
-    <Section id="biblioteca" background="alt" divider className="!py-10 md:!py-12">
+    <Section id="biblioteca" background="white" className="!py-10 md:!py-12">
       <div className="mx-auto flex max-w-3xl flex-col items-center gap-3 text-center sm:flex-row sm:justify-between sm:text-left">
         <div className="flex items-center gap-3">
           <BookOpen className="size-5 shrink-0 text-petroleo" strokeWidth={1.5} />
