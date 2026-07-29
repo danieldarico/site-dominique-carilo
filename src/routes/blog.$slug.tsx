@@ -9,13 +9,13 @@ export const Route = createFileRoute("/blog/$slug")({
     return {
       meta: post
         ? [
-            { title: `${post.title} — Dominique Carilo` },
+            { title: `${post.title} | Dominique Carilo` },
             { name: "description", content: post.excerpt },
             { property: "og:title", content: post.title },
             { property: "og:description", content: post.excerpt },
             { property: "og:type", content: "article" },
           ]
-        : [{ title: "Post — Dominique Carilo" }],
+        : [{ title: "Post | Dominique Carilo" }],
     };
   },
 });
@@ -27,38 +27,37 @@ function PostPage() {
   if (!post) {
     return (
       <div className="mx-auto max-w-2xl px-6 py-24 text-center">
-        <h1 className="font-display text-3xl font-bold text-brand">Post não encontrado</h1>
-        <Link to="/" className="mt-6 inline-block text-brand underline">
-          Voltar ao início
+        <h1 className="font-display text-3xl font-semibold text-ink">Post não encontrado</h1>
+        <Link to="/blog" className="mt-6 inline-block text-bordo underline">
+          Voltar ao blog
         </Link>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-white text-brand">
-      <header className="bg-brand py-4 text-brand-foreground">
+    <div className="min-h-screen bg-white text-ink">
+      <header className="border-b border-divider bg-white py-4">
         <div className="mx-auto flex w-full max-w-3xl items-center px-6">
           <Link
-            to="/"
-            hash="meu-blog"
-            className="inline-flex items-center gap-2 text-sm text-white/90 hover:text-white"
+            to="/blog"
+            className="inline-flex items-center gap-2 font-sans text-sm text-ink/70 hover:text-bordo"
           >
             <ArrowLeft className="size-4" /> Voltar ao blog
           </Link>
         </div>
       </header>
       <article className="mx-auto w-full max-w-3xl px-6 py-12 md:py-20">
-        <h1 className="font-display text-3xl font-bold leading-tight md:text-4xl">
+        <h1 className="font-display text-3xl font-semibold leading-tight text-ink md:text-4xl">
           {post.title}
         </h1>
-        <div className="mt-8 space-y-5 text-base leading-relaxed md:text-[17px]">
+        <div className="mt-8 space-y-5 font-sans text-base leading-relaxed text-ink/80 md:text-[17px]">
           {post.paragraphs.map((p: string, i: number) => (
             <p key={i}>{p}</p>
           ))}
         </div>
         <div className="mt-12 border-t border-divider pt-8">
-          <h2 className="mb-4 font-display text-xl font-bold">Outros posts</h2>
+          <h2 className="mb-4 font-display text-xl font-semibold text-ink">Outros posts</h2>
           <ul className="space-y-2">
             {posts
               .filter((p) => p.slug !== post.slug)
@@ -68,7 +67,7 @@ function PostPage() {
                   <Link
                     to="/blog/$slug"
                     params={{ slug: p.slug }}
-                    className="text-brand underline-offset-4 hover:underline"
+                    className="text-bordo underline-offset-4 hover:underline"
                   >
                     {p.title}
                   </Link>

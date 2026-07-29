@@ -1,24 +1,34 @@
+import { Camera } from "lucide-react";
+import { BrandLink } from "./BrandButton";
+
 export function Hero() {
   return (
-    <section
-      id="top"
-      className="relative flex min-h-[60vh] items-center justify-center overflow-hidden bg-brand text-brand-foreground md:min-h-screen"
-    >
-      <div
-        aria-hidden
-        className="absolute inset-0 opacity-40"
-        style={{
-          background:
-            "radial-gradient(ellipse at 30% 20%, rgba(255,255,255,0.08), transparent 60%), radial-gradient(ellipse at 70% 80%, rgba(0,0,0,0.35), transparent 60%)",
-        }}
-      />
-      <div className="relative z-10 px-6 text-center">
-        <h1 className="font-display text-5xl font-bold tracking-wide md:text-7xl">
-          Dominique Carilo
-        </h1>
-        <p className="mt-4 font-sans text-lg text-white/85 md:text-xl">
-          Psicóloga | CRP
-        </p>
+    <section id="top" className="scroll-mt-20 bg-white pb-16 pt-14 md:pb-28 md:pt-20">
+      <div className="mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-12 px-6 md:grid-cols-2 md:gap-16">
+        <div>
+          <p className="mb-5 font-sans text-xs font-semibold uppercase tracking-[0.18em] text-bordo">
+            Dominique Carilo · Psicóloga | Psicanalista
+          </p>
+          <h1 className="font-display text-4xl font-semibold leading-[1.15] text-ink md:text-[2.75rem]">
+            Há sofrimentos que não permanecem porque falta força de vontade. Permanecem porque
+            seguimos respondendo à vida da única maneira que um dia aprendemos.
+          </h1>
+          <p className="mt-6 max-w-xl font-sans text-base leading-relaxed text-ink/70 md:text-lg">
+            A análise é um espaço de escuta para investigar aquilo que insiste em se repetir e
+            construir outras possibilidades de existir.
+          </p>
+          <div className="mt-8">
+            <BrandLink as="a" href="#fale-comigo" variant="primary">
+              Agendar uma primeira conversa
+            </BrandLink>
+          </div>
+        </div>
+        <div
+          aria-hidden
+          className="flex aspect-[4/5] w-full items-center justify-center rounded-sm bg-surface-alt"
+        >
+          <Camera className="size-10 text-divider" strokeWidth={1.25} />
+        </div>
       </div>
     </section>
   );

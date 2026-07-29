@@ -77,14 +77,24 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Dominique Carilo" },
-      { property: "og:title", content: "Dominique Carilo" },
-      { name: "twitter:title", content: "Dominique Carilo" },
-      { name: "description", content: "Psicóloga pela Universidade Veiga de Almeida com extensão em saúde mental do trabalhador pela UFRJ. Pós graduada em Psicanálise, Tratamento dos transtornos de a" },
-      { property: "og:description", content: "Psicóloga pela Universidade Veiga de Almeida com extensão em saúde mental do trabalhador pela UFRJ. Pós graduada em Psicanálise, Tratamento dos transtornos de a" },
-      { name: "twitter:description", content: "Psicóloga pela Universidade Veiga de Almeida com extensão em saúde mental do trabalhador pela UFRJ. Pós graduada em Psicanálise, Tratamento dos transtornos de a" },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/69450989-f8d8-4ea1-a44b-32dcc74c2ef1/id-preview-e2f641bf--a0fd8b67-a4ce-41bd-a762-8a291d953ab7.lovable.app-1781967730192.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/69450989-f8d8-4ea1-a44b-32dcc74c2ef1/id-preview-e2f641bf--a0fd8b67-a4ce-41bd-a762-8a291d953ab7.lovable.app-1781967730192.png" },
+      { title: "Dominique Carilo | Psicóloga e Psicanalista Online" },
+      { property: "og:title", content: "Dominique Carilo | Psicóloga e Psicanalista Online" },
+      { name: "twitter:title", content: "Dominique Carilo | Psicóloga e Psicanalista Online" },
+      {
+        name: "description",
+        content:
+          "Psicóloga e psicanalista online. Atendimento para ansiedade, síndrome do pânico e escuta clínica de orientação lacaniana. Agende uma primeira conversa.",
+      },
+      {
+        property: "og:description",
+        content:
+          "Psicóloga e psicanalista online. Atendimento para ansiedade, síndrome do pânico e escuta clínica de orientação lacaniana.",
+      },
+      {
+        name: "twitter:description",
+        content:
+          "Psicóloga e psicanalista online. Atendimento para ansiedade, síndrome do pânico e escuta clínica de orientação lacaniana.",
+      },
       { name: "twitter:card", content: "summary_large_image" },
       { property: "og:type", content: "website" },
     ],
@@ -94,7 +104,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&family=Karla:wght@400;500;600;700&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap",
       },
     ],
   }),

@@ -1,46 +1,45 @@
-import { useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { Section, SectionTitle } from "./Section";
-import { BrandButton } from "./BrandButton";
+import { Section, Eyebrow, SectionTitle } from "./Section";
+import { brandButtonClass } from "./BrandButton";
 import { posts } from "@/data/posts";
 
 export function Blog() {
-  const [expanded, setExpanded] = useState(false);
-  const visible = expanded ? posts : posts.slice(0, 3);
+  const visible = posts.slice(0, 3);
 
   return (
-    <Section id="meu-blog" background="alt" divider>
-      <SectionTitle>Meu Blog</SectionTitle>
+    <Section id="meu-blog" background="white" divider>
+      <Eyebrow>Blog</Eyebrow>
+      <SectionTitle>Últimos artigos.</SectionTitle>
       <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
         {visible.map((post) => (
           <article
             key={post.slug}
-            className="flex flex-col overflow-hidden rounded-md bg-white shadow-sm"
+            className="flex flex-col overflow-hidden border border-divider bg-white"
           >
-            <div className="aspect-video w-full bg-divider" />
-            <div className="flex flex-1 flex-col gap-3 p-5">
-              <h3 className="font-display text-lg font-bold leading-snug">
+            <div className="aspect-video w-full bg-surface-alt" />
+            <div className="flex flex-1 flex-col gap-3 p-6">
+              <h3 className="font-display text-lg font-semibold leading-snug text-ink">
                 {post.title}
               </h3>
-              <p className="flex-1 text-sm leading-relaxed text-brand/80">
-                {post.excerpt}
-              </p>
+              <p className="flex-1 font-sans text-sm leading-relaxed text-ink/70">{post.excerpt}</p>
               <div className="pt-2">
-                <Link to="/blog/$slug" params={{ slug: post.slug }}>
-                  <BrandButton type="button">Ler mais</BrandButton>
+                <Link
+                  to="/blog/$slug"
+                  params={{ slug: post.slug }}
+                  className={brandButtonClass("outline", "px-5 py-2 text-xs")}
+                >
+                  Ler artigo
                 </Link>
               </div>
             </div>
           </article>
         ))}
       </div>
-      {posts.length > 3 && (
-        <div className="mt-10 flex justify-center">
-          <BrandButton type="button" onClick={() => setExpanded((v) => !v)}>
-            {expanded ? "Ver menos posts" : "Ver mais posts"}
-          </BrandButton>
-        </div>
-      )}
+      <div className="mt-10 flex justify-center">
+        <Link to="/blog" className={brandButtonClass("primary")}>
+          Ver todos os artigos
+        </Link>
+      </div>
     </Section>
   );
 }

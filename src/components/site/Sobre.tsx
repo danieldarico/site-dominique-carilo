@@ -13,18 +13,16 @@ export function Sobre() {
         </div>
         <div className="space-y-5 text-base leading-relaxed md:text-[17px]">
           <p>
-            Olá, meu nome é Dominique Carilo. Sou Psicóloga pela Universidade Veiga
-            de Almeida com extensão em saúde mental do trabalhador pela UFRJ. Pós
-            graduada em Psicanálise, Tratamento dos transtornos de ansiedade e
-            síndrome do pânico e Psicoterapia em intervenção de crises e prevenção
-            de suicídio.
+            Olá, meu nome é Dominique Carilo. Sou Psicóloga pela Universidade Veiga de Almeida com
+            extensão em saúde mental do trabalhador pela UFRJ. Pós graduada em Psicanálise,
+            Tratamento dos transtornos de ansiedade e síndrome do pânico e Psicoterapia em
+            intervenção de crises e prevenção de suicídio.
           </p>
           <p>
-            Ofereço um espaço de escuta e elaboração para as questões mais adversas
-            que nos atravessam e podem ocasionar angústias, medos, sintomas ou
-            paralisações frente a vida. Através da fala, que é única a cada
-            indivíduo, é aberto um lugar onde é possível a busca pelo
-            autoconhecimento e bem estar.
+            Ofereço um espaço de escuta e elaboração para as questões mais adversas que nos
+            atravessam e podem ocasionar angústias, medos, sintomas ou paralisações frente a vida.
+            Através da fala, que é única a cada indivíduo, é aberto um lugar onde é possível a busca
+            pelo autoconhecimento e bem estar.
           </p>
           <p>Atendimento online e presencial para adolescentes, adultos e idosos.</p>
         </div>

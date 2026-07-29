@@ -4,26 +4,24 @@ import { cn } from "@/lib/utils";
 type Props = {
   id: string;
   children: ReactNode;
-  background?: "white" | "alt" | "brand";
+  background?: "white" | "alt" | "ink" | "petroleo";
   divider?: boolean;
   className?: string;
 };
 
 const bg = {
-  white: "bg-white text-brand",
-  alt: "bg-surface-alt text-brand",
-  brand: "bg-brand text-brand-foreground",
+  white: "bg-white text-ink",
+  alt: "bg-surface-alt text-ink",
+  ink: "bg-ink text-white",
+  petroleo: "bg-petroleo text-white",
 };
 
 export function Section({ id, children, background = "white", divider = false, className }: Props) {
   return (
-    <section
-      id={id}
-      className={cn("scroll-mt-20 py-12 md:py-20", bg[background], className)}
-    >
+    <section id={id} className={cn("scroll-mt-20 py-16 md:py-28", bg[background], className)}>
       <div className="mx-auto w-full max-w-6xl px-6">{children}</div>
       {divider && (
-        <div className="mx-auto mt-12 w-full max-w-6xl px-6 md:mt-20">
+        <div className="mx-auto mt-16 w-full max-w-6xl px-6 md:mt-28">
           <hr className="border-t border-divider" />
         </div>
       )}
@@ -31,9 +29,28 @@ export function Section({ id, children, background = "white", divider = false, c
   );
 }
 
-export function SectionTitle({ children }: { children: ReactNode }) {
+export function Eyebrow({ children }: { children: ReactNode }) {
   return (
-    <h2 className="mb-10 text-center font-display text-3xl font-bold md:text-4xl">
+    <p className="mb-3 text-center font-sans text-xs font-semibold uppercase tracking-[0.18em] text-bordo">
+      {children}
+    </p>
+  );
+}
+
+export function SectionTitle({
+  children,
+  align = "center",
+}: {
+  children: ReactNode;
+  align?: "center" | "left";
+}) {
+  return (
+    <h2
+      className={cn(
+        "mb-10 font-display text-4xl font-semibold leading-tight md:text-5xl",
+        align === "center" ? "text-center" : "text-left",
+      )}
+    >
       {children}
     </h2>
   );
