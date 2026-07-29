@@ -7,7 +7,7 @@ import { ComoFuncionaBullets } from "@/components/site/ComoFuncionaBullets";
 import { SobreCredenciais } from "@/components/site/SobreCredenciais";
 import { Blog } from "@/components/site/Blog";
 import { DuvidasRapidas } from "@/components/site/DuvidasRapidas";
-import { BibliotecaTeaser } from "@/components/site/BibliotecaTeaser";
+
 import { CTAFinal } from "@/components/site/CTAFinal";
 import { FaleComigo } from "@/components/site/FaleComigo";
 import { Footer } from "@/components/site/Footer";
