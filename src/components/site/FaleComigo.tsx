@@ -16,7 +16,7 @@ export function FaleComigo() {
   }
 
   const inputCls =
-    "w-full rounded-[3px] border border-divider bg-white px-4 py-2.5 text-sm text-ink placeholder:text-ink/40 focus:border-bordo focus:outline-none focus:ring-0";
+    "w-full rounded-lg border border-divider bg-white px-4 py-2.5 text-sm text-ink placeholder:text-ink/40 focus:border-bordo focus:outline-none focus:ring-0";
 
   return (
     <section id="fale-comigo" className="scroll-mt-20 bg-surface-alt py-16 text-ink md:py-24">
@@ -42,7 +42,7 @@ export function FaleComigo() {
             <button
               type="submit"
               disabled={sending}
-              className="inline-flex items-center justify-center rounded-[3px] bg-bordo px-6 py-2.5 font-sans text-sm font-semibold text-white transition-opacity hover:opacity-90 disabled:opacity-60"
+              className="inline-flex items-center justify-center rounded-lg bg-bordo px-6 py-2.5 font-sans text-sm font-semibold text-white transition-opacity hover:opacity-90 disabled:opacity-60"
             >
               {sending ? "Enviando..." : "Enviar"}
             </button>
