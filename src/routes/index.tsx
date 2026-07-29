@@ -45,7 +45,6 @@ function Index() {
         <SobreCredenciais />
         <Blog />
         <DuvidasRapidas />
-        <BibliotecaTeaser />
         <CTAFinal />
         <FaleComigo />
       </main>
