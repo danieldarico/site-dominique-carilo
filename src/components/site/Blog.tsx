@@ -16,7 +16,7 @@ export function Blog() {
             key={post.slug}
             className="flex flex-col overflow-hidden border border-divider bg-white"
           >
-            <div className="aspect-video w-full bg-surface-alt" />
+            <div className="aspect-video w-full bg-divider/40" />
             <div className="flex flex-1 flex-col gap-3 p-6">
               <h3 className="font-display text-lg font-semibold leading-snug text-ink">
                 {post.title}

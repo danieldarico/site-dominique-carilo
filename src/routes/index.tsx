@@ -2,11 +2,13 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Toaster } from "@/components/ui/sonner";
 import { Navbar } from "@/components/site/Navbar";
 import { Hero } from "@/components/site/Hero";
-import { MalEstar } from "@/components/site/MalEstar";
-import { ComoTrabalhoTeaser } from "@/components/site/ComoTrabalhoTeaser";
 import { ServicosCards } from "@/components/site/ServicosCards";
-import { BibliotecaTeaser } from "@/components/site/BibliotecaTeaser";
+import { ComoFuncionaBullets } from "@/components/site/ComoFuncionaBullets";
+import { SobreCredenciais } from "@/components/site/SobreCredenciais";
+import { MalEstar } from "@/components/site/MalEstar";
 import { Blog } from "@/components/site/Blog";
+import { DuvidasRapidas } from "@/components/site/DuvidasRapidas";
+import { BibliotecaTeaser } from "@/components/site/BibliotecaTeaser";
 import { CTAFinal } from "@/components/site/CTAFinal";
 import { FaleComigo } from "@/components/site/FaleComigo";
 import { Footer } from "@/components/site/Footer";
@@ -39,11 +41,13 @@ function Index() {
       <Navbar />
       <main className="pt-16">
         <Hero />
-        <MalEstar />
-        <ComoTrabalhoTeaser />
         <ServicosCards />
-        <BibliotecaTeaser />
+        <ComoFuncionaBullets />
+        <SobreCredenciais />
+        <MalEstar />
         <Blog />
+        <DuvidasRapidas />
+        <BibliotecaTeaser />
         <CTAFinal />
         <FaleComigo />
       </main>
