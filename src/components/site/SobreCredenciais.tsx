@@ -2,6 +2,7 @@ import { Camera } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { Section, Eyebrow } from "./Section";
 import { brandButtonClass } from "./BrandButton";
+import { Reveal } from "./Reveal";
 
 const formacao = [
   "Graduação em Psicologia, Universidade Veiga de Almeida",
@@ -13,10 +14,18 @@ export function SobreCredenciais() {
   return (
     <Section id="sobre-mim" background="white" divider>
       <div className="mx-auto grid max-w-4xl grid-cols-1 items-center gap-10 md:grid-cols-[0.8fr_1.2fr]">
-        <div className="flex aspect-square w-full max-w-xs items-center justify-center justify-self-center rounded-2xl bg-surface-alt md:justify-self-start">
-          <Camera className="size-8 text-divider" strokeWidth={1.25} />
-        </div>
-        <div>
+        <Reveal className="justify-self-center md:justify-self-start">
+          <div className="relative">
+            <div
+              aria-hidden
+              className="absolute -inset-3 -z-10 rounded-2xl border border-divider"
+            />
+            <div className="flex aspect-square w-full max-w-xs items-center justify-center rounded-2xl bg-surface-alt">
+              <Camera className="size-8 text-divider" strokeWidth={1.25} />
+            </div>
+          </div>
+        </Reveal>
+        <Reveal delay={120}>
           <Eyebrow>Sobre mim</Eyebrow>
           <h2 className="mb-1 font-display text-2xl font-semibold text-ink md:text-3xl">
             Dominique Carilo
@@ -38,7 +47,7 @@ export function SobreCredenciais() {
           <Link to="/percurso" className={brandButtonClass("outline")}>
             Ver formação completa
           </Link>
-        </div>
+        </Reveal>
       </div>
     </Section>
   );

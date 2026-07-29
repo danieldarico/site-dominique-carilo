@@ -1,4 +1,5 @@
 import { type ReactNode } from "react";
+import { TopoPattern } from "./TopoPattern";
 
 export function PageHero({
   eyebrow,
@@ -12,9 +13,11 @@ export function PageHero({
   tone?: "bordo" | "petroleo";
 }) {
   const toneClass = tone === "petroleo" ? "text-petroleo" : "text-bordo";
+  const stroke = tone === "petroleo" ? "#2F4F4F" : "#971D1D";
   return (
-    <section className="border-b border-divider bg-surface-alt pb-14 pt-28 md:pb-20 md:pt-36">
-      <div className="mx-auto w-full max-w-4xl px-6 text-center">
+    <section className="relative overflow-hidden border-b border-divider bg-surface-alt pb-14 pt-28 md:pb-20 md:pt-36">
+      <TopoPattern className="-right-16 -top-16 size-72 md:size-96" stroke={stroke} opacity={0.1} />
+      <div className="relative mx-auto w-full max-w-4xl px-6 text-center">
         <p
           className={`mb-4 font-sans text-xs font-semibold uppercase tracking-[0.18em] ${toneClass}`}
         >

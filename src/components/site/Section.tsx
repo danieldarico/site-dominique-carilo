@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 type Props = {
   id: string;
   children: ReactNode;
-  background?: "white" | "alt" | "ink" | "petroleo";
+  background?: "white" | "alt" | "ink" | "petroleo" | "bordo" | "bordo-tint";
   divider?: boolean;
   className?: string;
 };
@@ -14,6 +14,8 @@ const bg = {
   alt: "bg-surface-alt text-ink",
   ink: "bg-ink text-white",
   petroleo: "bg-petroleo text-white",
+  bordo: "bg-bordo text-white",
+  "bordo-tint": "bg-bordo/[0.05] text-ink",
 };
 
 export function Section({ id, children, background = "white", divider = false, className }: Props) {

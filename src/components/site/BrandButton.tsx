@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 type Variant = "primary" | "outline" | "outline-light";
 
 const base =
-  "inline-flex items-center justify-center gap-2 rounded-lg px-6 py-3 text-sm font-medium font-sans transition-colors";
+  "inline-flex items-center justify-center gap-2 rounded-lg px-6 py-3 text-sm font-medium font-sans transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-bordo focus-visible:ring-offset-2";
 
 const variants: Record<Variant, string> = {
   primary: "bg-bordo text-white hover:bg-bordo/90",
