@@ -9,33 +9,18 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as IndexRouteImport } from './routes/index'
-import { Route as AtendimentoRouteImport } from './routes/atendimento'
-import { Route as BibliotecaRouteImport } from './routes/biblioteca'
-import { Route as ComoTrabalhoRouteImport } from './routes/como-trabalho'
-import { Route as DuvidasRouteImport } from './routes/duvidas'
 import { Route as PercursoRouteImport } from './routes/percurso'
+import { Route as DuvidasRouteImport } from './routes/duvidas'
+import { Route as ComoTrabalhoRouteImport } from './routes/como-trabalho'
+import { Route as BibliotecaRouteImport } from './routes/biblioteca'
+import { Route as AtendimentoRouteImport } from './routes/atendimento'
+import { Route as IndexRouteImport } from './routes/index'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AtendimentoRoute = AtendimentoRouteImport.update({
-  id: '/atendimento',
-  path: '/atendimento',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const BibliotecaRoute = BibliotecaRouteImport.update({
-  id: '/biblioteca',
-  path: '/biblioteca',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ComoTrabalhoRoute = ComoTrabalhoRouteImport.update({
-  id: '/como-trabalho',
-  path: '/como-trabalho',
+const PercursoRoute = PercursoRouteImport.update({
+  id: '/percurso',
+  path: '/percurso',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DuvidasRoute = DuvidasRouteImport.update({
@@ -43,9 +28,24 @@ const DuvidasRoute = DuvidasRouteImport.update({
   path: '/duvidas',
   getParentRoute: () => rootRouteImport,
 } as any)
-const PercursoRoute = PercursoRouteImport.update({
-  id: '/percurso',
-  path: '/percurso',
+const ComoTrabalhoRoute = ComoTrabalhoRouteImport.update({
+  id: '/como-trabalho',
+  path: '/como-trabalho',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BibliotecaRoute = BibliotecaRouteImport.update({
+  id: '/biblioteca',
+  path: '/biblioteca',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AtendimentoRoute = AtendimentoRouteImport.update({
+  id: '/atendimento',
+  path: '/atendimento',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BlogIndexRoute = BlogIndexRouteImport.update({
@@ -136,32 +136,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/atendimento': {
-      id: '/atendimento'
-      path: '/atendimento'
-      fullPath: '/atendimento'
-      preLoaderRoute: typeof AtendimentoRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/biblioteca': {
-      id: '/biblioteca'
-      path: '/biblioteca'
-      fullPath: '/biblioteca'
-      preLoaderRoute: typeof BibliotecaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/como-trabalho': {
-      id: '/como-trabalho'
-      path: '/como-trabalho'
-      fullPath: '/como-trabalho'
-      preLoaderRoute: typeof ComoTrabalhoRouteImport
+    '/percurso': {
+      id: '/percurso'
+      path: '/percurso'
+      fullPath: '/percurso'
+      preLoaderRoute: typeof PercursoRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/duvidas': {
@@ -171,11 +150,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DuvidasRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/percurso': {
-      id: '/percurso'
-      path: '/percurso'
-      fullPath: '/percurso'
-      preLoaderRoute: typeof PercursoRouteImport
+    '/como-trabalho': {
+      id: '/como-trabalho'
+      path: '/como-trabalho'
+      fullPath: '/como-trabalho'
+      preLoaderRoute: typeof ComoTrabalhoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/biblioteca': {
+      id: '/biblioteca'
+      path: '/biblioteca'
+      fullPath: '/biblioteca'
+      preLoaderRoute: typeof BibliotecaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/atendimento': {
+      id: '/atendimento'
+      path: '/atendimento'
+      fullPath: '/atendimento'
+      preLoaderRoute: typeof AtendimentoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/blog/': {
