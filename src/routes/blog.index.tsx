@@ -8,6 +8,13 @@ import { Section, Eyebrow, SectionTitle } from "@/components/site/Section";
 import { Reveal } from "@/components/site/Reveal";
 import { brandButtonClass } from "@/components/site/BrandButton";
 import { Badge } from "@/components/ui/badge";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
+} from "@/components/ui/carousel";
 import { posts, type Post } from "@/data/posts";
 
 export const Route = createFileRoute("/blog/")({
@@ -85,11 +92,19 @@ function BlogIndex() {
         <Section id="artigos" background="white">
           <Eyebrow tone="petroleo">Blog</Eyebrow>
           <SectionTitle>Mais recentes</SectionTitle>
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-            {recentes.map((post, i) => (
-              <PostCard key={post.slug} post={post} delay={(i % 3) * 80} />
-            ))}
-          </div>
+          <Carousel opts={{ align: "start" }} className="mx-auto w-full max-w-5xl">
+            <CarouselContent>
+              {recentes.map((post, i) => (
+                <CarouselItem key={post.slug} className="basis-full sm:basis-1/2 lg:basis-1/3">
+                  <PostCard post={post} delay={(i % 3) * 80} />
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <div className="mt-6 flex justify-center gap-3">
+              <CarouselPrevious className="static translate-y-0" />
+              <CarouselNext className="static translate-y-0" />
+            </div>
+          </Carousel>
         </Section>
       </main>
       <Footer />
