@@ -12,7 +12,7 @@ const links = [
 
 export function Footer() {
   return (
-    <footer className="bg-ink py-14 text-white/80">
+    <footer className="bg-petroleo py-14 text-white/80">
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-8 px-6 md:flex-row md:justify-between">
         <div>
           <p className="font-display text-lg font-semibold text-white">Dominique Carilo</p>

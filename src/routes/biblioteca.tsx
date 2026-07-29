@@ -4,12 +4,21 @@ import { Toaster } from "@/components/ui/sonner";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 import { PageHero } from "@/components/site/PageHero";
-import { Section } from "@/components/site/Section";
+import { Section, Eyebrow, SectionTitle } from "@/components/site/Section";
 import { Reveal } from "@/components/site/Reveal";
 import { brandButtonClass } from "@/components/site/BrandButton";
 import { Badge } from "@/components/ui/badge";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
+} from "@/components/ui/carousel";
 
-const categorias = ["Psicanálise", "Clínica", "Ensaio", "Psicanálise", "Clínica"];
+const destaques = [{ categoria: "Psicanálise" }, { categoria: "Clínica lacaniana" }];
+
+const acervo = ["Ensaio", "Psicanálise", "Clínica", "Ensaio", "Psicanálise", "Clínica"];
 
 export const Route = createFileRoute("/biblioteca")({
   head: () => ({
@@ -52,54 +61,67 @@ function Biblioteca() {
           </div>
         </Section>
 
-        <Section id="acervo" background="alt">
-          <div className="mb-8 text-center font-sans text-xs uppercase tracking-[0.14em] text-ink/40">
-            Acervo em preparação, títulos entram assim que definidos com a Dominique
-          </div>
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            <Reveal className="sm:col-span-2 sm:row-span-1">
-              <div className="flex h-full flex-col gap-4 rounded-2xl bg-petroleo p-6 text-white sm:flex-row sm:items-center">
-                <div className="flex aspect-[3/4] w-full max-w-[140px] shrink-0 items-center justify-center rounded-xl bg-white/10">
-                  <BookOpen className="size-8 text-white/70" strokeWidth={1.25} />
-                </div>
-                <div>
-                  <Badge className="mb-2 border-0 bg-white/15 text-white hover:bg-white/15">
-                    Em destaque
-                  </Badge>
-                  <p className="font-display text-xl font-semibold">Título a definir</p>
-                  <p className="mt-1 font-sans text-sm text-white/70">Autor a definir</p>
-                  <p className="mt-3 max-w-md font-sans text-sm leading-relaxed text-white/75">
-                    A leitura que mais atravessa a prática clínica da Dominique, indicada com
-                    frequência em consultório.
-                  </p>
-                </div>
-              </div>
-            </Reveal>
-
-            {categorias.map((cat, i) => (
-              <Reveal key={i} delay={i * 60}>
-                <div className="flex h-full flex-col gap-3 rounded-2xl bg-white p-5">
-                  <div className="flex aspect-[3/4] w-full items-center justify-center rounded-xl bg-surface-alt">
-                    <BookOpen className="size-6 text-divider" strokeWidth={1.25} />
+        <Section id="destaques" background="alt">
+          <Eyebrow tone="petroleo">Em destaque</Eyebrow>
+          <SectionTitle>As leituras mais indicadas</SectionTitle>
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+            {destaques.map((d, i) => (
+              <Reveal key={i} delay={i * 100}>
+                <div className="flex h-full flex-col gap-4 rounded-2xl bg-petroleo p-6 text-white sm:flex-row sm:items-center">
+                  <div className="flex aspect-[3/4] w-full max-w-[140px] shrink-0 items-center justify-center rounded-xl bg-white/10">
+                    <BookOpen className="size-8 text-white/70" strokeWidth={1.25} />
                   </div>
-                  <Badge variant="outline" className="w-fit border-divider text-ink/60">
-                    {cat}
-                  </Badge>
                   <div>
-                    <p className="font-sans text-sm font-semibold text-ink">Título a definir</p>
-                    <p className="font-sans text-xs text-ink/50">Autor a definir</p>
+                    <Badge className="mb-2 border-0 bg-white/15 text-white hover:bg-white/15">
+                      {d.categoria}
+                    </Badge>
+                    <p className="font-display text-xl font-semibold">Título a definir</p>
+                    <p className="mt-1 font-sans text-sm text-white/70">Autor a definir</p>
                   </div>
-                  <span className="mt-auto inline-flex items-center gap-1.5 font-sans text-xs text-ink/35">
-                    <ExternalLink className="size-3.5" />
-                    Ver na Amazon (em breve)
-                  </span>
                 </div>
               </Reveal>
             ))}
           </div>
         </Section>
 
-        <Section id="cta" background="ink">
+        <Section id="acervo" background="white" divider>
+          <div className="mb-8 flex flex-col items-center gap-2 text-center">
+            <Eyebrow>Acervo</Eyebrow>
+            <p className="font-sans text-xs uppercase tracking-[0.14em] text-ink/40">
+              Em preparação, títulos entram assim que definidos com a Dominique
+            </p>
+          </div>
+          <Carousel opts={{ align: "start" }} className="mx-auto w-full max-w-5xl">
+            <CarouselContent>
+              {acervo.map((cat, i) => (
+                <CarouselItem key={i} className="basis-1/2 sm:basis-1/3 lg:basis-1/4">
+                  <div className="flex h-full flex-col gap-3 rounded-2xl bg-surface-alt p-5">
+                    <div className="flex aspect-[3/4] w-full items-center justify-center rounded-xl bg-white">
+                      <BookOpen className="size-6 text-divider" strokeWidth={1.25} />
+                    </div>
+                    <Badge variant="outline" className="w-fit border-divider text-ink/60">
+                      {cat}
+                    </Badge>
+                    <div>
+                      <p className="font-sans text-sm font-semibold text-ink">Título a definir</p>
+                      <p className="font-sans text-xs text-ink/50">Autor a definir</p>
+                    </div>
+                    <span className="mt-auto inline-flex items-center gap-1.5 font-sans text-xs text-ink/35">
+                      <ExternalLink className="size-3.5" />
+                      Ver na Amazon (em breve)
+                    </span>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <div className="mt-6 flex justify-center gap-3">
+              <CarouselPrevious className="static translate-y-0" />
+              <CarouselNext className="static translate-y-0" />
+            </div>
+          </Carousel>
+        </Section>
+
+        <Section id="cta" background="petroleo">
           <div className="mx-auto max-w-xl text-center">
             <p className="font-display text-2xl font-medium text-white md:text-3xl">
               Quer conversar sobre o que está sentindo?

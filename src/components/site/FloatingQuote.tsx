@@ -9,9 +9,9 @@ export function FloatingQuote({
 }: {
   quote: string;
   align?: "left" | "right";
-  tone?: "bordo" | "petroleo" | "ink";
+  tone?: "bordo" | "petroleo";
 }) {
-  const toneBg = { bordo: "bg-bordo", petroleo: "bg-petroleo", ink: "bg-ink" }[tone];
+  const toneBg = { bordo: "bg-bordo", petroleo: "bg-petroleo" }[tone];
 
   return (
     <div className="relative mx-auto w-full max-w-sm">

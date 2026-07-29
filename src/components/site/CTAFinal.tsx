@@ -4,7 +4,7 @@ import { TopoPattern } from "./TopoPattern";
 
 export function CTAFinal() {
   return (
-    <Section id="cta-final" background="ink" className="relative overflow-hidden">
+    <Section id="cta-final" background="petroleo" className="relative overflow-hidden">
       <TopoPattern className="-left-14 -top-14 size-72" stroke="#ffffff" opacity={0.08} />
       <div className="relative mx-auto max-w-xl text-center">
         <p className="font-display text-2xl font-medium text-white md:text-3xl">

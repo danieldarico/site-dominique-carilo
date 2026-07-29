@@ -14,8 +14,9 @@ export function Hero() {
             Um espaço de escuta para ansiedade, crises e os padrões que insistem em se repetir.
           </h1>
           <p className="mt-5 max-w-md font-sans text-base leading-relaxed text-ink/65">
-            Psicanálise de orientação lacaniana. Atendimento 100% online para jovens, adultos e
-            idosos.
+            <span className="font-semibold text-ink">Psicanálise de orientação lacaniana.</span>{" "}
+            Atendimento <span className="font-semibold text-ink">100% online</span> para jovens,
+            adultos e idosos.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-5">
             <BrandLink as="a" href="#fale-comigo" variant="primary">
@@ -56,7 +57,7 @@ export function Hero() {
           <div className="relative flex aspect-[4/5] w-full items-center justify-center rounded-2xl bg-surface-alt">
             <Camera className="size-10 text-divider" strokeWidth={1.25} />
           </div>
-          <div className="relative -mt-6 mx-4 rounded-lg bg-ink px-4 py-3 font-sans text-xs italic leading-relaxed text-white/90">
+          <div className="relative -mt-6 mx-4 rounded-lg bg-petroleo px-4 py-3 font-sans text-xs italic leading-relaxed text-white/90">
             “Há sofrimentos que permanecem porque seguimos respondendo à vida da única forma que um
             dia aprendemos.”
           </div>

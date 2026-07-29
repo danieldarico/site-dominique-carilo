@@ -33,8 +33,9 @@ export function SobreCredenciais() {
           <p className="mb-4 font-sans text-sm text-ink/60">Psicóloga (CRP) e Psicanalista</p>
           <p className="mb-5 font-sans text-base leading-relaxed text-ink/75">
             Acredito que cada pessoa chega à análise trazendo uma história singular. Meu trabalho é
-            oferecer um espaço de escuta ética, onde seja possível investigar aquilo que insiste em
-            se repetir.
+            oferecer um <span className="font-semibold text-ink">espaço de escuta ética</span>, onde
+            seja possível investigar aquilo que{" "}
+            <span className="font-semibold text-ink">insiste em se repetir</span>.
           </p>
           <ul className="mb-6 space-y-1.5 font-sans text-sm text-ink/70">
             {formacao.map((f) => (

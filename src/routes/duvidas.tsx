@@ -141,7 +141,7 @@ function Duvidas() {
             ))}
           </div>
         </Section>
-        <Section id="cta" background="ink">
+        <Section id="cta" background="petroleo">
           <div className="mx-auto max-w-xl text-center">
             <p className="font-display text-2xl font-medium text-white md:text-3xl">
               Posso confiar?

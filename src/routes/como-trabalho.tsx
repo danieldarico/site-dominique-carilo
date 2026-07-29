@@ -50,9 +50,10 @@ function ComoTrabalho() {
               <Eyebrow>Ética da escuta</Eyebrow>
               <SectionTitle align="left">Um espaço para investigar o que se repete</SectionTitle>
               <p className="font-sans text-base leading-relaxed text-ink/75 md:text-lg">
-                Meu trabalho consiste em oferecer um espaço de escuta ética, onde seja possível
-                investigar aquilo que insiste em se repetir e construir novas formas de responder à
-                própria história.
+                Meu trabalho consiste em oferecer um{" "}
+                <span className="font-semibold text-ink">espaço de escuta ética</span>, onde seja
+                possível investigar aquilo que insiste em se repetir e construir novas formas de
+                responder à própria história.
               </p>
             </Reveal>
             <FloatingQuote quote="Um espaço de escuta ética, sem respostas prontas." tone="bordo" />
@@ -76,26 +77,21 @@ function ComoTrabalho() {
           </div>
         </Section>
 
-        <Section id="atendimento-cta" background="bordo" className="relative overflow-hidden">
+        <Section id="cta" background="bordo" className="relative overflow-hidden">
           <TopoPattern className="-left-10 -bottom-10 size-64" stroke="#ffffff" opacity={0.12} />
-          <div className="relative mx-auto flex max-w-2xl flex-col items-center gap-5 text-center">
-            <p className="font-display text-2xl font-medium text-white md:text-3xl">
-              Quer entender o passo a passo da análise?
-            </p>
-            <Link to="/atendimento" className={brandButtonClass("outline-light")}>
-              Conheça o atendimento em detalhes
-            </Link>
-          </div>
-        </Section>
-
-        <Section id="cta" background="ink">
-          <div className="mx-auto max-w-xl text-center">
+          <div className="relative mx-auto flex max-w-xl flex-col items-center gap-2 text-center">
             <p className="font-display text-2xl font-medium text-white md:text-3xl">
               O primeiro passo pode ser apenas uma conversa.
             </p>
-            <div className="mt-8">
+            <p className="mb-3 font-sans text-sm text-white/75">
+              Ou, se preferir entender o passo a passo antes, conheça o atendimento em detalhes.
+            </p>
+            <div className="mt-4 flex flex-wrap justify-center gap-4">
               <Link to="/" hash="fale-comigo" className={brandButtonClass("outline-light")}>
                 Agendar uma primeira conversa
+              </Link>
+              <Link to="/atendimento" className={brandButtonClass("outline-light")}>
+                Conheça o atendimento
               </Link>
             </div>
           </div>

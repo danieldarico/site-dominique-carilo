@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 type Props = {
   id: string;
   children: ReactNode;
-  background?: "white" | "alt" | "ink" | "petroleo" | "bordo" | "bordo-tint";
+  background?: "white" | "alt" | "petroleo" | "bordo" | "bordo-tint";
   divider?: boolean;
   className?: string;
 };
@@ -12,7 +12,6 @@ type Props = {
 const bg = {
   white: "bg-white text-ink",
   alt: "bg-surface-alt text-ink",
-  ink: "bg-ink text-white",
   petroleo: "bg-petroleo text-white",
   bordo: "bg-bordo text-white",
   "bordo-tint": "bg-bordo/[0.05] text-ink",
@@ -59,13 +58,26 @@ export function SectionTitle({
   align?: "center" | "left";
 }) {
   return (
-    <h2
-      className={cn(
-        "mb-10 font-display text-4xl font-semibold leading-tight md:text-5xl",
-        align === "center" ? "text-center" : "text-left",
-      )}
-    >
-      {children}
-    </h2>
+    <div className="mb-10">
+      <h2
+        className={cn(
+          "font-display text-4xl font-semibold leading-tight md:text-5xl",
+          align === "center" ? "text-center" : "text-left",
+        )}
+      >
+        {children}
+      </h2>
+      <div
+        aria-hidden
+        className={cn(
+          "mt-4 flex items-center gap-2",
+          align === "center" ? "justify-center" : "justify-start",
+        )}
+      >
+        <span className="h-px w-6 bg-divider" />
+        <span className="size-1.5 rounded-full bg-bordo" />
+        <span className="h-px w-6 bg-divider" />
+      </div>
+    </div>
   );
 }

@@ -1,4 +1,10 @@
-export type Post = { slug: string; title: string; excerpt: string; paragraphs: string[] };
+export type Post = {
+  slug: string;
+  title: string;
+  excerpt: string;
+  paragraphs: string[];
+  featured?: boolean;
+};
 
 export const posts: Post[] = [
   {
@@ -62,6 +68,7 @@ export const posts: Post[] = [
   },
   {
     slug: "por-que-pagamos-pela-terapia",
+    featured: true,
     title: "Por que pagamos pela terapia?",
     excerpt:
       "Pagar é abrir mão do seu sintoma, do seu sinto-mal. É dar o que se tem para abrir um lugar de falta, apontando o que ela fala. Sendo assim, a análise deve ser cara a cada sujeito que tem em seu desejo abrir mão do que lhe faz mal, ressaltan",
@@ -109,6 +116,7 @@ export const posts: Post[] = [
   },
   {
     slug: "voce-conhece-a-lenda-de-hidra-de-lerna",
+    featured: true,
     title: "Você conhece a Lenda de Hidra de Lerna?",
     excerpt:
       "Na mitologia, Hidra de Lerna era um monstro com cinco, sete ou cem cabeças, de acordo com a literatura que a escreve.",
