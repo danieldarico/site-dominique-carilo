@@ -29,9 +29,21 @@ export function Section({ id, children, background = "white", divider = false, c
   );
 }
 
-export function Eyebrow({ children }: { children: ReactNode }) {
+export function Eyebrow({
+  children,
+  tone = "bordo",
+}: {
+  children: ReactNode;
+  tone?: "bordo" | "petroleo";
+}) {
+  const toneClass = tone === "petroleo" ? "text-petroleo" : "text-bordo";
   return (
-    <p className="mb-3 text-center font-sans text-xs font-semibold uppercase tracking-[0.18em] text-bordo">
+    <p
+      className={cn(
+        "mb-3 text-center font-sans text-xs font-semibold uppercase tracking-[0.18em]",
+        toneClass,
+      )}
+    >
       {children}
     </p>
   );

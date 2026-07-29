@@ -30,6 +30,7 @@ function BlogIndex() {
           eyebrow="Blog"
           title="Psicanálise aplicada ao cotidiano"
           subtitle="Artigos sobre repetição de padrões, angústia, relacionamentos e escuta clínica."
+          tone="petroleo"
         />
         <Section id="artigos" background="white">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3">

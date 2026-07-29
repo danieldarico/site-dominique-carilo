@@ -8,7 +8,7 @@ export function Blog() {
 
   return (
     <Section id="meu-blog" background="white" divider>
-      <Eyebrow>Blog</Eyebrow>
+      <Eyebrow tone="petroleo">Blog</Eyebrow>
       <SectionTitle>Últimos artigos.</SectionTitle>
       <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
         {visible.map((post) => (

@@ -47,7 +47,7 @@ function Percurso() {
       <main>
         <PageHero eyebrow="Percurso" title="Formação e trajetória" />
         <Section id="formacao" background="white" divider>
-          <Timeline items={formacao} />
+          <Timeline items={formacao} tone="petroleo" />
         </Section>
         <Section id="cta" background="ink">
           <div className="mx-auto max-w-xl text-center">

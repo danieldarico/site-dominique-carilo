@@ -32,6 +32,7 @@ function Biblioteca() {
           eyebrow="Biblioteca"
           title="Livros que acompanham uma travessia."
           subtitle="A leitura nunca substitui uma análise. Mas, muitas vezes, oferece palavras para experiências que ainda não conseguimos nomear."
+          tone="petroleo"
         />
 
         <Section id="sobre-a-biblioteca" background="white" divider>
