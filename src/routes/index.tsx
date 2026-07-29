@@ -2,28 +2,29 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Toaster } from "@/components/ui/sonner";
 import { Navbar } from "@/components/site/Navbar";
 import { Hero } from "@/components/site/Hero";
-import { Sobre } from "@/components/site/Sobre";
+import { MalEstar } from "@/components/site/MalEstar";
+import { ComoTrabalhoTeaser } from "@/components/site/ComoTrabalhoTeaser";
+import { ServicosCards } from "@/components/site/ServicosCards";
+import { BibliotecaTeaser } from "@/components/site/BibliotecaTeaser";
 import { Blog } from "@/components/site/Blog";
-import { Especialidades } from "@/components/site/Especialidades";
-import { Fotos } from "@/components/site/Fotos";
-import { Depoimentos } from "@/components/site/Depoimentos";
-import { OndeEstou } from "@/components/site/OndeEstou";
+import { CTAFinal } from "@/components/site/CTAFinal";
 import { FaleComigo } from "@/components/site/FaleComigo";
 import { Footer } from "@/components/site/Footer";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Dominique Carilo — Psicóloga em Teresópolis/RJ" },
+      { title: "Dominique Carilo | Psicóloga e Psicanalista Online" },
       {
         name: "description",
         content:
-          "Psicóloga Dominique Carilo. Atendimento online e presencial em Teresópolis/RJ para adolescentes, adultos e idosos.",
+          "Psicóloga e psicanalista online, orientação lacaniana. Atendimento para ansiedade, síndrome do pânico e escuta clínica. Agende uma primeira conversa.",
       },
-      { property: "og:title", content: "Dominique Carilo — Psicóloga" },
+      { property: "og:title", content: "Dominique Carilo | Psicóloga e Psicanalista Online" },
       {
         property: "og:description",
-        content: "Atendimento online e presencial em Teresópolis/RJ.",
+        content:
+          "Psicóloga e psicanalista online, orientação lacaniana. Agende uma primeira conversa.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
@@ -34,16 +35,16 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <div className="min-h-screen bg-white text-brand">
+    <div className="min-h-screen bg-white text-ink">
       <Navbar />
       <main className="pt-16">
         <Hero />
-        <Sobre />
+        <MalEstar />
+        <ComoTrabalhoTeaser />
+        <ServicosCards />
+        <BibliotecaTeaser />
         <Blog />
-        <Especialidades />
-        <Fotos />
-        <Depoimentos />
-        <OndeEstou />
+        <CTAFinal />
         <FaleComigo />
       </main>
       <Footer />

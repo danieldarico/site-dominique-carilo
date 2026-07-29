@@ -5,27 +5,28 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * Design system definition.
+ * Design system definition, redesign baseado no Brand Book (8 julho).
  *
- * The @theme inline block maps CSS custom properties to Tailwind utility
- * classes (e.g. --color-primary -> bg-primary, text-primary).
+ * Paleta: bordô institucional como cor de destaque pontual, preto/branco como
+ * base, cinzas neutros para respiro visual, petróleo como apoio editorial.
+ * Tipografia: Cormorant SC (display) + Inter (corpo).
  *
- * The :root and .dark blocks define the actual color values using oklch.
- * All colors MUST use oklch format.
- *
- * To add a new semantic color:
- * 1. Add the variable to :root (light value) and .dark (dark value)
- * 2. Register it in @theme inline as --color-<name>: var(--<name>)
+ * O @theme inline block mapeia CSS custom properties para classes Tailwind
+ * (--color-primary -> bg-primary, text-primary). Cores adicionais abaixo
+ * seguem o mesmo padrão (--color-bordo -> bg-bordo, text-bordo, etc).
  */
 
 @theme {
-  --color-brand: #3D435C;
-  --color-brand-foreground: #ffffff;
-  --color-surface-alt: #f9f8f6;
-  --color-divider: #e0ddd8;
-  --color-star: #d4a017;
-  --font-display: "Rubik", ui-sans-serif, system-ui, sans-serif;
-  --font-sans: "Karla", ui-sans-serif, system-ui, sans-serif;
+  --color-bordo: #971d1d;
+  --color-bordo-foreground: #ffffff;
+  --color-ink: #111111;
+  --color-ink-foreground: #ffffff;
+  --color-surface-alt: #f5f5f3;
+  --color-divider: #c9c7c2;
+  --color-petroleo: #2f4f4f;
+  --color-petroleo-foreground: #ffffff;
+  --font-display: "Cormorant SC", Georgia, "Times New Roman", serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
 }
 
 @theme inline {
@@ -72,39 +73,39 @@
 }
 
 :root {
-  --radius: 0.625rem;
+  --radius: 0.375rem;
   --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
+  --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
+  --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.396 0.135 25.5);
   --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
+  --secondary: oklch(0.968 0.003 60);
+  --secondary-foreground: oklch(0.145 0 0);
+  --muted: oklch(0.968 0.003 60);
+  --muted-foreground: oklch(0.5 0 0);
+  --accent: oklch(0.968 0.003 60);
+  --accent-foreground: oklch(0.145 0 0);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.929 0.013 255.508);
-  --input: oklch(0.929 0.013 255.508);
-  --ring: oklch(0.704 0.04 256.788);
+  --border: oklch(0.85 0.006 90);
+  --input: oklch(0.85 0.006 90);
+  --ring: oklch(0.396 0.135 25.5);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
   --sidebar: oklch(0.984 0.003 247.858);
-  --sidebar-foreground: oklch(0.129 0.042 264.695);
-  --sidebar-primary: oklch(0.208 0.042 265.755);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.396 0.135 25.5);
   --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-accent: oklch(0.968 0.007 247.896);
-  --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
-  --sidebar-border: oklch(0.929 0.013 255.508);
-  --sidebar-ring: oklch(0.704 0.04 256.788);
+  --sidebar-accent: oklch(0.968 0.003 60);
+  --sidebar-accent-foreground: oklch(0.145 0 0);
+  --sidebar-border: oklch(0.85 0.006 90);
+  --sidebar-ring: oklch(0.396 0.135 25.5);
 }
 
 .dark {
@@ -159,5 +160,6 @@
 
   h1, h2, h3, h4 {
     font-family: var(--font-display);
+    letter-spacing: 0.01em;
   }
 }
